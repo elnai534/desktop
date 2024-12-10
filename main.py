@@ -15,12 +15,13 @@ sleep_num = [19, 20, 21, 22, 23, 24, 25] #26
 walk_left = [13, 14, 15]
 walk_right = [16, 17, 18]
 
-class Ket:
+class Elina:
     def __init__(self):
         self.window=tk.Tk()
 
         self.idle=[tk.PhotoImage(file='assets/idle1.png'), tk.PhotoImage(file='assets/idle2.png'), tk.PhotoImage(file='assets/idle1.png'), tk.PhotoImage(file='assets/idle2.png')]
-
+        self.w=[tk.PhotoImage(file='assets/w1.png'),tk.PhotoImage(file='assets/w2.png'),tk.PhotoImage(file='assets/w3.png'),tk.PhotoImage(file='assets/w3.png'),tk.PhotoImage(file='assets/w4.png'),tk.PhotoImage(file='assets/w5.png'),tk.PhotoImage(file='assets/w6.png'),tk.PhotoImage(file='assets/w1.png'),tk.PhotoImage(file='assets/w2.png'),tk.PhotoImage(file='assets/w3.png'),tk.PhotoImage(file='assets/w3.png'),tk.PhotoImage(file='assets/w4.png'),tk.PhotoImage(file='assets/w5.png'),tk.PhotoImage(file='assets/w6.png')]
+        self.kiss=[tk.PhotoImage(file='assets/kiss1.png'),tk.PhotoImage(file='assets/kiss3.png'),tk.PhotoImage(file='assets/kiss4.png'),tk.PhotoImage(file='assets/kiss5.png'),tk.PhotoImage(file='assets/kiss6.5.png'),tk.PhotoImage(file='assets/kiss6.png'),tk.PhotoImage(file='assets/kiss7.png'),tk.PhotoImage(file='assets/kiss8.png'),tk.PhotoImage(file='assets/kiss9.png'),tk.PhotoImage(file='assets/kiss9.png'),tk.PhotoImage(file='assets/kiss9.png')]
         #self.idle_to_sleeping=[tk.PhotoImage(file='assets/sleeping1.png'), tk.PhotoImage(file='assets/sleeping2.png'), tk.PhotoImage(file='assets/sleeping3.png'), tk.PhotoImage(file='assets/sleeping4.png'), tk.PhotoImage(file='assets/sleeping5.png'), tk.PhotoImage(file='assets/sleeping6.png')]
 
         #self.sleeping=[tk.PhotoImage(file='assets/zzz1.png'), tk.PhotoImage(file='assets/zzz2.png'), tk.PhotoImage(file='assets/zzz3.png'), tk.PhotoImage(file='assets/zzz4.png')]
@@ -107,4 +108,4 @@ class Ket:
         self.label.configure(image=self.frame)
         self.window.after(1, self.event, self.i_frame, self.state, self.event_number, self.x)
 
-ket=Ket()      
+elina=Elina()      
