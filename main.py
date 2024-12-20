@@ -70,6 +70,14 @@ class Elina:
         self.x = int(screen_width * 0.8)
         self.y = work_height - self.animation_height - taskbar_height 
 
+        # Dragging functionality
+        self.drag_start_x = 0
+        self.drag_start_y = 0
+
+        # Bind mouse events for dragging
+        self.window.bind('<ButtonPress-3>', self.start_drag)
+        self.window.bind('<B3-Motion>', self.do_drag)
+
         self.window.bind('<Button-1>', self.on_click)
 
         self.window.after(1, self.update)
@@ -77,9 +85,9 @@ class Elina:
 
     def resource_path(self, relative_path):
         """ Get the absolute path to the resource, works for development and PyInstaller. """
-        if getattr(sys, 'frozen', False):  # If the app is run as a PyInstaller bundle
+        if getattr(sys, 'frozen', False):  
             base_path = sys._MEIPASS
-        else:  # If running in development mode
+        else: 
             base_path = os.path.abspath(".")
         return os.path.join(base_path, relative_path)
 
@@ -87,6 +95,17 @@ class Elina:
         """Load an image without altering its opacity."""
         img = Image.open(filepath).convert("RGBA")
         return ImageTk.PhotoImage(img)
+
+    def start_drag(self, event):
+        """Record the starting position of the drag."""
+        self.drag_start_x = event.x_root - self.window.winfo_x()
+        self.drag_start_y = event.y_root - self.window.winfo_y()
+
+    def do_drag(self, event):
+        """Handle the drag movement and move the window."""
+        self.x = event.x_root - self.drag_start_x
+        self.y = event.y_root - self.drag_start_y
+        self.window.geometry(f'+{self.x}+{self.y}')
 
     def on_click(self, event):
         """Handle mouse click to trigger animations."""
