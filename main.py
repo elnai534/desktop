@@ -1,37 +1,42 @@
 import tkinter as tk
 import time
+import os
 
 root = tk.Tk()
 screen_width = root.winfo_screenwidth()
 work_height = root.winfo_screenheight()
 root.destroy()
 
+# Dynamically determine the path to the assets folder
+ASSETS_PATH = os.path.join(os.path.dirname(__file__), "assets")
+
 class Elina:
     def __init__(self):
         self.window = tk.Tk()
 
+        # Dynamically load images from the assets folder
         self.idle = [
-            tk.PhotoImage(file='assets/idle1.png'),
-            tk.PhotoImage(file='assets/idle2.png')
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'idle1.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'idle2.png'))
         ]
         self.kiss = [
-            tk.PhotoImage(file='assets/kiss1.png'),
-            tk.PhotoImage(file='assets/kiss3.png'),
-            tk.PhotoImage(file='assets/kiss4.png'),
-            tk.PhotoImage(file='assets/kiss5.png'),
-            tk.PhotoImage(file='assets/kiss6.5.png'),
-            tk.PhotoImage(file='assets/kiss6.png'),
-            tk.PhotoImage(file='assets/kiss7.png'),
-            tk.PhotoImage(file='assets/kiss8.png'),
-            tk.PhotoImage(file='assets/kiss9.png')
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss1.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss3.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss4.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss5.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss6.5.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss6.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss7.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss8.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'kiss9.png'))
         ]
         self.wave = [
-            tk.PhotoImage(file='assets/w1.png'),
-            tk.PhotoImage(file='assets/w2.png'),
-            tk.PhotoImage(file='assets/w3.png'),
-            tk.PhotoImage(file='assets/w4.png'),
-            tk.PhotoImage(file='assets/w5.png'),
-            tk.PhotoImage(file='assets/w6.png')
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'w1.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'w2.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'w3.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'w4.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'w5.png')),
+            tk.PhotoImage(file=os.path.join(ASSETS_PATH, 'w6.png'))
         ]
 
         self.i_frame = 0
